@@ -8,7 +8,7 @@ server.close();
 
 server.on('message', (msg, senderInfo) => {
 console.log('Messages received '+ msg)
-server.send(msg,senderInfo.port,senderInfo.address,()=>{
+server.send("client msg received, replying now",senderInfo.port,senderInfo.address,()=>{
 console.log(`Message sent to ${senderInfo.address}:${senderInfo.port}`)
 })
 });
