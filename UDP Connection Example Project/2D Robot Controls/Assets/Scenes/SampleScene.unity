@@ -204,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 84539571}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84539571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +336,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 244605963}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &244605963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +551,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 544484719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &544484719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,7 +683,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 737180593}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &737180593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +815,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 858496399}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &858496399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -887,7 +947,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 971364981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &971364981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,7 +1254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1129223287}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1129223287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,7 +1518,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1191761401}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1897363480}
+        m_TargetAssemblyTypeName: UDPConnect, Assembly-CSharp
+        m_MethodName: SendDirection
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1191761401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1562,7 +1658,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
