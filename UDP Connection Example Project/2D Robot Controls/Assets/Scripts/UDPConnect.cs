@@ -6,12 +6,17 @@ using System.Net.Sockets;
 using System.Net;
 using System;
 
+
+//beacon locations are *100, x-500 and y-300
+[System.Serializable]
 public class UDPConnect : MonoBehaviour
 {
     UdpClient client;
     byte[] bytesToSend;
     IPEndPoint remoteEndPoint;
     bool butPressed = false;
+
+    // public List<HedgehogData> data;
 
     void Start()
     {
@@ -106,6 +111,11 @@ public class UDPConnect : MonoBehaviour
             byte[] receiveBytes = client.Receive(ref remoteEndPoint);
             string receivedString = Encoding.ASCII.GetString(receiveBytes);
             print("Message received from the server \n " + receivedString);
+            // data = JsonUtility.FromJson<HedgehogData>(receivedString);
+            // print(data.address);
+            // print(data.coords); 
+            // HedgehogData hh = HedgehogData.CreateFromJSON(receivedString);
+            // print("coords = " + hh.coords);
         }catch(Exception e) {
             print("Exception thrown " + e.Message);
         }
@@ -123,3 +133,22 @@ public class UDPConnect : MonoBehaviour
         print("quitting");
     }
 }
+
+// [System.Serializable]
+// public class HedgehogData
+// {
+//     public int count;
+//     public Hedgehog[] hh;
+ 
+//     public static HedgehogData CreateFromJSON(string jsonString)
+//     {
+//         return JsonUtility.FromJson<HedgehogData>(jsonString);
+//     }
+// }
+
+// [System.Serializable]
+// public class Hedgehog
+// {
+//     public int address;
+//     public float[] coords;
+// }
