@@ -7,16 +7,16 @@ using System.Net;
 using System;
 
 
-//beacon locations are *100, x-500 and y-300
+//beacon locations are *100, x-500 and y+230 /2
+//moving beacons are ( /10*len ) * 100, x-500 and y+230 /2
 [System.Serializable]
 public class UDPConnect : MonoBehaviour
 {
-    UdpClient client;
-    byte[] bytesToSend;
-    IPEndPoint remoteEndPoint;
-    bool butPressed = false;
-
-    // public List<HedgehogData> data;
+    private UdpClient client;
+    private byte[] bytesToSend;
+    private IPEndPoint remoteEndPoint;
+    private bool butPressed = false;
+    private Transform canvas;
 
     void Start()
     {
@@ -36,7 +36,9 @@ public class UDPConnect : MonoBehaviour
             print("Exception thrown " + e.Message);
         }
 
-        InvokeRepeating("GetUpdatedCoords", 0.5f, 1.0f);
+        canvas = GameObject.FindWithTag("Canvas").transform;
+
+        InvokeRepeating("GetUpdatedCoords", 0.25f, 0.25f);
     }
 
     void Update() {
@@ -57,10 +59,6 @@ public class UDPConnect : MonoBehaviour
 
     public void SendDirection(int dir) {
         //int : dir
-        /**
-        0: top
-        1: left
-        **/
 
         switch(dir) {
             case 0:
@@ -111,14 +109,25 @@ public class UDPConnect : MonoBehaviour
             byte[] receiveBytes = client.Receive(ref remoteEndPoint);
             string receivedString = Encoding.ASCII.GetString(receiveBytes);
             print("Message received from the server \n " + receivedString);
-            // data = JsonUtility.FromJson<HedgehogData>(receivedString);
-            // print(data.address);
-            // print(data.coords); 
-            // HedgehogData hh = HedgehogData.CreateFromJSON(receivedString);
-            // print("coords = " + hh.coords);
+            HedgehogData hh = HedgehogData.CreateFromJSON(receivedString);
+
+            //update x and y coord
+            // print($"coords was {hh.coords[0]} and {hh.coords[1]}");
+            hh.coords[0] = (hh.coords[0] / 1000f) * 100; //x coordinate
+            hh.coords[1] = (hh.coords[1] / 1000f) * 100; //y coordinate
+            // print($"coords is actually {hh.coords[0]} and {hh.coords[1]}");
+
+            MoveHedgeHog(hh.address, hh.coords);
+            //hh.address and hh.coords hold the address and coordinates updated, so now can move the circles
         }catch(Exception e) {
             print("Exception thrown " + e.Message);
         }
+    }
+
+    void MoveHedgeHog(int address, float[] coords) {
+        Transform hh_sprite = GameObject.FindWithTag(address.ToString()).transform;
+        //update local position
+        hh_sprite.localPosition = new Vector3(coords[0], coords[1]*-1, 0);
     }
 
     void OnApplicationQuit()
@@ -134,21 +143,14 @@ public class UDPConnect : MonoBehaviour
     }
 }
 
-// [System.Serializable]
-// public class HedgehogData
-// {
-//     public int count;
-//     public Hedgehog[] hh;
- 
-//     public static HedgehogData CreateFromJSON(string jsonString)
-//     {
-//         return JsonUtility.FromJson<HedgehogData>(jsonString);
-//     }
-// }
+[System.Serializable]
+public class HedgehogData
+{
+    public int address;
+    public float[] coords;
 
-// [System.Serializable]
-// public class Hedgehog
-// {
-//     public int address;
-//     public float[] coords;
-// }
+    public static HedgehogData CreateFromJSON(string jsonString)
+    {
+        return JsonUtility.FromJson<HedgehogData>(jsonString);
+    }
+}
