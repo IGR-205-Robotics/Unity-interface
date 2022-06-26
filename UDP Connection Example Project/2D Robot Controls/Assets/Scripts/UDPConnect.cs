@@ -62,34 +62,34 @@ public class UDPConnect : MonoBehaviour
 
         switch(dir) {
             case 0:
-                bytesToSend = Encoding.ASCII.GetBytes("top");
+                bytesToSend = Encoding.ASCII.GetBytes("Forward");
                 break;
             case 1:
-                bytesToSend = Encoding.ASCII.GetBytes("top right diagnol");
+                bytesToSend = Encoding.ASCII.GetBytes("ForwardRightDiagnol");
                 break;
             case 2:
-                bytesToSend = Encoding.ASCII.GetBytes("right");
+                bytesToSend = Encoding.ASCII.GetBytes("Right");
                 break;
             case 3:
-                bytesToSend = Encoding.ASCII.GetBytes("bottom right diagnol");
+                bytesToSend = Encoding.ASCII.GetBytes("BackwardsRightDiagnol");
                 break;
             case 4:
-                bytesToSend = Encoding.ASCII.GetBytes("bottom");
+                bytesToSend = Encoding.ASCII.GetBytes("Backwards");
                 break;
             case 5:
-                bytesToSend = Encoding.ASCII.GetBytes("bottom left diagnol");
+                bytesToSend = Encoding.ASCII.GetBytes("BackwardsLeftDiagnol");
                 break;
             case 6:
-                bytesToSend = Encoding.ASCII.GetBytes("left");
+                bytesToSend = Encoding.ASCII.GetBytes("Left");
                 break;
             case 7:
-                bytesToSend = Encoding.ASCII.GetBytes("top left diagnol");
+                bytesToSend = Encoding.ASCII.GetBytes("ForwardLeftDiagnol");
                 break;
             case 8:
-                bytesToSend = Encoding.ASCII.GetBytes("turn counter clockwise");
+                bytesToSend = Encoding.ASCII.GetBytes("TurnCounterClockwise");
                 break;
             case 9:
-                bytesToSend = Encoding.ASCII.GetBytes("turn clockwise");
+                bytesToSend = Encoding.ASCII.GetBytes("TurnClockwise");
                 break;
             case 22:
                 bytesToSend = Encoding.ASCII.GetBytes("TEST");
@@ -113,8 +113,8 @@ public class UDPConnect : MonoBehaviour
 
             //update x and y coord
             // print($"coords was {hh.coords[0]} and {hh.coords[1]}");
-            hh.coords[0] = (hh.coords[0] / 1000f) * 100; //x coordinate
-            hh.coords[1] = (hh.coords[1] / 1000f) * 100; //y coordinate
+            hh.coords[0] = (hh.coords[0] / 1000f); //x coordinate
+            hh.coords[1] = (hh.coords[1] / 1000f); //y coordinate
             // print($"coords is actually {hh.coords[0]} and {hh.coords[1]}");
 
             MoveHedgeHog(hh.address, hh.coords);
