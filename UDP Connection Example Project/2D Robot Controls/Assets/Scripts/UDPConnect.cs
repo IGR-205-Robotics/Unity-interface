@@ -12,14 +12,17 @@ using System;
 [System.Serializable]
 public class UDPConnect : MonoBehaviour
 {
+    //UDP connections
     private UdpClient client;
     private byte[] bytesToSend;
     private IPEndPoint remoteEndPoint;
+
     private bool butPressed = false;
     private Transform canvas;
 
     void Start()
     {
+        //udp
         client = new UdpClient(5600);
         try
         {
@@ -62,10 +65,10 @@ public class UDPConnect : MonoBehaviour
 
         switch(dir) {
             case 0:
-                bytesToSend = Encoding.ASCII.GetBytes("Forward");
+                bytesToSend = Encoding.ASCII.GetBytes("Forwards");
                 break;
             case 1:
-                bytesToSend = Encoding.ASCII.GetBytes("ForwardRightDiagnol");
+                bytesToSend = Encoding.ASCII.GetBytes("ForwardsRightDiagnol");
                 break;
             case 2:
                 bytesToSend = Encoding.ASCII.GetBytes("Right");
@@ -83,7 +86,7 @@ public class UDPConnect : MonoBehaviour
                 bytesToSend = Encoding.ASCII.GetBytes("Left");
                 break;
             case 7:
-                bytesToSend = Encoding.ASCII.GetBytes("ForwardLeftDiagnol");
+                bytesToSend = Encoding.ASCII.GetBytes("ForwardsLeftDiagnol");
                 break;
             case 8:
                 bytesToSend = Encoding.ASCII.GetBytes("TurnCounterClockwise");
